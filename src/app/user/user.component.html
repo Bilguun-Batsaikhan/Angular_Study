@@ -1,7 +1,8 @@
-<div>
-    <!-- "Event Binding" - a key Angular feature that allows you to listen for certain events and then run some JavaScript when they're triggered. For example, <button (click)="doSomething()"> runs the doSomething() method when the button is clicked. CTRL + SPACE to see full list of events-->
-    <button (click)="onSelectUser()">
-        <img [src]="imgPath" alt="">
-        <span>{{name}}</span>
-    </button>
-</div>
+<!-- The default behavior would be app-card component will replace the elements wrapped inside with its own template. In order to combine two templates, the wrapping component's template must have "ng-content" element in it-->
+<app-card>
+  <!-- "Event Binding" - a key Angular feature that allows you to listen for certain events and then run some JavaScript when they're triggered. For example, <button (click)="doSomething()"> runs the doSomething() method when the button is clicked. CTRL + SPACE to see full list of events-->
+  <button [class.active]="selected" (click)="onSelectUser()">
+    <img [src]="imgPath" [alt]="user.name" />
+    <span>{{ user.name }}</span>
+  </button>
+</app-card>
